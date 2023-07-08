@@ -5,31 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:alarm"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <WrapPanel>
+        Title="アラームアプリ" Height="400" Width="250"
+        WindowStartupLocation="CenterScreen"
+        Icon="/Assets/icon.ico">
+    <WrapPanel Background="PaleGreen">
         <StackPanel>
-            <WrapPanel>
+            <WrapPanel Margin="5, 5, 5, 0">
                 <TextBlock Text="タイトル :" Margin="5, 5, 5, 0" />
-                <TextBox Name="Name" Foreground="Blue" Text="" Width="150" Margin="5, 5, 5, 0" />
+                <TextBox Name="AlarmTitle" Foreground="Blue" Text="" Width="160" Margin="5, 5, 5, 0" />
             </WrapPanel>
-            <WrapPanel>
+            <WrapPanel Margin="5, 5, 5, 0">
                 <TextBox Name="Hours" Foreground="Blue" Text="" Width="30" Margin="5, 5, 5, 0" />
-                <TextBlock Text=":" Margin="5, 5, 5, 0" />
+                <TextBlock Text=":" Margin="0, 5, 0, 0" />
                 <TextBox Name="Minutes" Foreground="Blue" Text="" Width="30" Margin="5, 5, 5, 0" />
-                <Button Click="Register" Margin="5, 5, 5, 0">
-                    <Button.Background>Gray</Button.Background>
+                <Button Click="Register" Width="130" Margin="5, 5, 5, 0">
+                    <Button.Background>SteelBlue</Button.Background>
                     <Button.Foreground>White</Button.Foreground>
-                    <Button.Content>登録</Button.Content>
-                </Button>
+                <Button.Content>登録</Button.Content>
+            </Button>
             </WrapPanel>
             <Grid>
                 <ListView Margin="10" Name="AlarmList">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn
-                                Width="50"
-                                DisplayMemberBinding="{Binding Name}"
-                                Header="名前" />
+                                Width="130"
+                                DisplayMemberBinding="{Binding AlarmTitle}"
+                                Header="タイトル" />
                             <GridViewColumn
                                 Width="70"
                                 DisplayMemberBinding="{Binding Time}"
@@ -39,10 +41,11 @@
                 </ListView>
             </Grid>
             <Button Click="Delete" Margin="5, 5, 5, 0">
-                <Button.Background>Red</Button.Background>
+                <Button.Background>LightCoral</Button.Background>
                 <Button.Foreground>White</Button.Foreground>
                 <Button.Content>削除</Button.Content>
             </Button>
+            <TextBlock Text="※ PCの時刻がずれている場合は調整してください" FontSize="12" />
         </StackPanel>
     </WrapPanel>
 </Window>

@@ -5,13 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:alarm"
         mc:Ignorable="d"
-        Title="SubWindow" Height="300" Width="1000">
+        Title="時間になりました！" Height="300" Width="1000"
+        WindowStartupLocation="CenterScreen"
+        Icon="/Assets/icon.ico">
     <Grid>
         <StackPanel VerticalAlignment="Center"
             HorizontalAlignment="Stretch"
             Margin="10,20,30,40">  
             <TextBlock Text="作業を中断して会議を準備してください！" FontSize="50" />
-            <TextBlock Name="Name" FontSize="50" />
+            <TextBlock Name="AlarmTitle" FontSize="50" />
             <TextBlock Name="Time" FontSize="50" />
         </StackPanel>
     </Grid>

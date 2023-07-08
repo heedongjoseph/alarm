@@ -1,9 +1,13 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net7.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>./Assets/icon.ico</ApplicationIcon>
   </PropertyGroup>
-
+<ItemGroup>
+    <Folder Include="Assets\" />
+    <Resource Include="Assets/icon.ico" />
+</ItemGroup>
 </Project>

@@ -1,30 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace alarm
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         private readonly DispatcherTimer _timer = new DispatcherTimer();
         public class Alarm
         {
-            public string Name { get; set; }
+            public string AlarmTitle { get; set; }
             public string Time { get; set; }
         }
         private void dispatcherTimer_Tick(object sender, EventArgs e)
@@ -34,14 +19,11 @@ namespace alarm
             {
                 // 時刻を文字列で取得
                 string timeStr = item.Time.ToString() ?? "";
-                // MessageBox.Show(DateTime.Now.ToString("HH:mm") + "," + timeStr);
+
                 // 現在時刻と比較
                 if (DateTime.Now.ToString("HH:mm") == timeStr)
                 {
-                    // アラーム一覧から該当時刻を削除
-                    // AlarmList.Items.Remove(item);
-
-                    SubWindow sub = new SubWindow(item.Name.ToString(), timeStr);
+                    SubWindow sub = new SubWindow(item.AlarmTitle.ToString(), timeStr);
                     sub.Topmost = true;
                     sub.Show();
                     sub.Activate();
@@ -73,7 +55,15 @@ namespace alarm
             if (Hours.Text.Length == 1) {
                 hours = "0" + hours;
             }
-            AlarmList.Items.Add(new Alarm { Name = Name.Text, Time = "" + hours + ":" + Minutes.Text });
+
+            var alarmTime = "";
+            try {
+                alarmTime = DateTime.Parse(hours + ":" + Minutes.Text).ToString("HH:mm");
+            } catch {
+                return;
+            }
+
+            AlarmList.Items.Add(new Alarm { AlarmTitle = AlarmTitle.Text, Time = alarmTime });
             if (!_timer.IsEnabled)
             {
                 _timer.Start();

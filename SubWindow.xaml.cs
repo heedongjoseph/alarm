@@ -16,15 +16,12 @@ using System.Windows.Shapes;
 
 namespace alarm
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class SubWindow : Window
     {
-        public SubWindow(String name, String time)
+        public SubWindow(String alarmTitle, String time)
         {
             InitializeComponent();
-            Name.Text = name;
+            AlarmTitle.Text = alarmTitle;
             Time.Text = time;
         }
     }
