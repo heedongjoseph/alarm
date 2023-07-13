@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sXt3zGQdFJBrTwLr4Y8yu+KDkeD8WGDNqnSyL7AcEtx4btjJ/B35bpRqqNU31fkL9F2W4YwchClq3eOf/RsI0Q==",
+  "dgSpecHash": "RGdqfrVWQowWrJB+xYFgUXL8eUzUT05zVGxnpNuCvuKaTeSzM9iOp2Kwoj9fObM6DkG1W4/XllMBoVjHpAy1rw==",
   "success": true,
   "projectFilePath": "C:\\Users\\lolo1\\git\\alarm\\alarm.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\lolo1\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\7.0.8\\microsoft.netcore.app.runtime.win-x86.7.0.8.nupkg.sha512",
-    "C:\\Users\\lolo1\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\7.0.8\\microsoft.windowsdesktop.app.runtime.win-x86.7.0.8.nupkg.sha512",
-    "C:\\Users\\lolo1\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\7.0.8\\microsoft.aspnetcore.app.runtime.win-x86.7.0.8.nupkg.sha512",
-    "C:\\Users\\lolo1\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\7.0.8\\microsoft.netcore.app.crossgen2.win-x64.7.0.8.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

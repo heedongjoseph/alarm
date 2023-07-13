@@ -1,20 +1,20 @@
 ﻿alarm
-1.0.0.0
+
 
 winexe
 C#
 .cs
-c:\Users\lolo1\git\alarm\obj\Debug\net7.0-windows\
+C:\Users\lolo1\git\alarm\obj\Debug\net7.0-windows\
 alarm
 none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
-c:\Users\lolo1\git\alarm\App.xaml
+C:\Users\lolo1\git\alarm\App.xaml
 2-269869989
 
-639680779
+4-193572321
 198-1604275641
 MainWindow.xaml;SubWindow.xaml;
 
-True
+False
 
