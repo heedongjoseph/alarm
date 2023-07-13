@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Threading;
 using System.ComponentModel;
+using System.Windows.Input;
 
 namespace alarm
 {
@@ -50,7 +51,7 @@ namespace alarm
             InitializeComponent();
             resetTimer();
         }
-        private void Register(object sender, RoutedEventArgs e)
+        private void RegisterProcess()
         {
             var hours = Hours.Text;
             if (Hours.Text.Length == 1) {
@@ -74,6 +75,16 @@ namespace alarm
             {
                 _timer.Start();
             }
+
+            AlarmTitle.Text = "";
+            Hours.Text = "";
+            Minutes.Text = "";
+
+            AlarmTitle.Focus();
+        }
+        private void Register(object sender, RoutedEventArgs e)
+        {
+            RegisterProcess();
         }
         private void Delete(object sender, RoutedEventArgs e)
         {
@@ -84,6 +95,21 @@ namespace alarm
 
             // 選択された項目を削除
             AlarmList.Items.RemoveAt(AlarmList.SelectedIndex);
+        }
+        private void EnterKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key  == Key.Return)
+            {
+                RegisterProcess();
+            }
+        }
+        protected virtual void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (MessageBoxResult.Yes != MessageBox.Show("画面を閉じます。よろしいですか？", "確認", MessageBoxButton.YesNo, MessageBoxImage.Information))
+            {
+                e.Cancel = true;
+                return;
+            }
         }
     }
 }
