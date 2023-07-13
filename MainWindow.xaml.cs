@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Threading;
+using System.ComponentModel;
 
 namespace alarm
 {
@@ -64,6 +65,11 @@ namespace alarm
             }
 
             AlarmList.Items.Add(new Alarm { AlarmTitle = AlarmTitle.Text, Time = alarmTime });
+
+            AlarmList.Items.SortDescriptions.Add(
+                new SortDescription("Time", ListSortDirection.Ascending)
+            );
+
             if (!_timer.IsEnabled)
             {
                 _timer.Start();
